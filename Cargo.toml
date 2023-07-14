@@ -1,0 +1,16 @@
+[package]
+name = "suipy"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "suipy"
+crate-type = ["cdylib"]
+
+[dependencies]
+sui-sdk  = { git = "https://github.com/MystenLabs/sui.git", branch = "devnet" }
+sui-json-rpc-types = { git = "https://github.com/MystenLabs/sui.git", branch = "devnet" }
+pyo3 = "0.18.0"
+pyo3-asyncio = { version = "0.18.0", features = ["tokio-runtime"] }
+tokio = "1.28.0"
+anyhow = "1.0.44"
