@@ -53,9 +53,9 @@ async fn _sendSui(
             Transaction::from_data(transfer_tx.unwrap(), Intent::sui_transaction(), vec![signature]),
             SuiTransactionBlockResponseOptions::full_content(),
             Some(ExecuteTransactionRequestType::WaitForLocalExecution),
-        ).await;
+        ).await; 
 
-    return format!("{:?}", tx); // Return TX hash as a string 
+    return format!("{:?}", tx); // Return TX hash as a string for formatting 
 }
 
 #[pyfunction]
@@ -66,5 +66,5 @@ pub fn sendSui(py: Python<'_>, to: String, amount: u64, privateKey: String, rpc:
         handle.await.unwrap()
     });
 
-    format!("{:?}", result)
+    return format!("{:?}", result)
 }

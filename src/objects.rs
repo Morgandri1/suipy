@@ -23,7 +23,7 @@ async fn _getOwnedObjects(address: String, rpc: String) -> Vec<SuiObjectResponse
         )
         .await;
     let output = &objects.unwrap().data;
-    println!("{:?}", output);
+    println!("{:?}", output); // Debug only
     return output.to_vec();
 }
 
@@ -35,5 +35,5 @@ pub fn getOwnedObjects(py: Python<'_>, address: String, rpc: String) -> String {
         handle.await.unwrap()
     });
 
-    format!("{:?}", result)
+    return format!("{:?}", result)
 }
